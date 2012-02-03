@@ -1,0 +1,10 @@
+[Unit]
+Description=MPD_sima
+After=mpd.service network.target
+
+[Service]
+User=mpd_sima
+ExecStart=/usr/bin/mpd-sima --config=/etc/mpd-sima.cfg --var_dir=/var/lib/mpd_sima
+
+[Install]
+WantedBy=multi-user.target
