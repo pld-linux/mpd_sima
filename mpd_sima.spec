@@ -1,16 +1,17 @@
 Summary:	Automagically add titles to mpd playlist
 Name:		mpd_sima
-Version:	0.8.0
+Version:	0.9.0
 Release:	1
 License:	GPL v3+
 Group:		Applications
-Source0:	http://codingteam.net/project/sima/download/file/%{name}_%{version}.tgz
-# Source0-md5:	5c6e5790ce87c034ef4c437c214bad1d
+Source0:	http://codingteam.net/project/sima/download/file/%{name}_%{version}.tar.xz
+# Source0-md5:	3c64d480ecbeec7e9b3e83a153f7ba90
 Source1:	%{name}.service
-Patch0:		vardir.patch
 URL:		http://codingteam.net/project/sima
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	python-mpd
 Requires:	systemd-units >= 37-0.10
 Provides:	group(mpd_sima)
@@ -27,7 +28,6 @@ playlist queue is getting short.
 
 %prep
 %setup -q -n %{name}_%{version}
-%patch0 -p1
 for f in src/mpd_sima src/simadb_cli; do
 	sed -i -e 's=#!/usr/bin/env python=#!/usr/bin/python=' $f
 done
