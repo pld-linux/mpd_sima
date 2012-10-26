@@ -1,11 +1,11 @@
 Summary:	Automagically add titles to mpd playlist
 Name:		mpd_sima
-Version:	0.9.2
-Release:	2
+Version:	0.10.0
+Release:	1
 License:	GPL v3+
 Group:		Applications
 Source0:	http://codingteam.net/project/sima/download/file/%{name}_%{version}.tar.xz
-# Source0-md5:	0e6404c52ca75fe040697836af4d1ef1
+# Source0-md5:	606a7202bea64830237e79f7cb20dc92
 Source1:	%{name}.service
 URL:		http://codingteam.net/project/sima
 BuildRequires:	rpm-pythonprov
